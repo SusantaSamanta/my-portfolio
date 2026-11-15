@@ -19,8 +19,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200/80 bg-white/85 backdrop-blur-xl dark:border-white/10 dark:bg-[#090817]/85">
-      <nav className="mx-auto flex h-[76px] max-w-[1440px] items-center justify-between px-5 md:px-8">
+    <header className="sticky top-0 z-50 border-b border-gray-200/80 bg-white/85 backdrop-blur-xl dark:border-white/10 dark:bg-[#090817]/65">
+      <nav className="mx-auto flex h-16 max-w-360 items-center justify-between px-5 md:px-8">
 
         {/* Logo */}
         <Link
@@ -45,7 +45,7 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className={`relative py-2 text-sm font-medium transition-colors
+              className={`relative py- text-sm font-medium transition-colors
                 ${
                   link.name === "Home"
                     ? "text-violet-600 dark:text-violet-400"
@@ -56,7 +56,7 @@ export default function Navbar() {
               {link.name}
 
               {link.name === "Home" && (
-                <span className="absolute -bottom-1 left-0 h-[2px] w-full rounded-full bg-violet-500" />
+                <span className="absolute -bottom-1 left-0 h-0.5 w-full rounded-full bg-violet-500" />
               )}
             </Link>
           ))}
@@ -70,7 +70,7 @@ export default function Navbar() {
           <a
             href="/resume.pdf"
             download
-            className="hidden items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-500/20 transition hover:-translate-y-0.5 hover:shadow-purple-500/40 sm:inline-flex"
+            className="hidden items-center gap-2 rounded-xl bg-linear-to-r from-violet-600 to-purple-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-500/20 transition hover:-translate-y-0.5 hover:shadow-purple-500/40 sm:inline-flex"
           >
             <Download size={17} />
             Resume
