@@ -51,7 +51,7 @@ export default function SocialLinks() {
             transition={{ delay: 0.6 + index * 0.1 }}
             // whileHover={{ y: -5, scale: 1.12 }}
             whileTap={{ scale: 0.95 }}
-            className="text-gray-500 transition-colors duration-300 hover:text-violet-500 dark:text-gray-400 dark:hover:text-violet-400"
+            className="text-gray-500 transition-colors duration-300 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
           >
             <Icon size={22} />
           </motion.a>

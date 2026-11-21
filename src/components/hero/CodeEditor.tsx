@@ -71,7 +71,7 @@ export default function CodeEditor() {
             initial={{ opacity: 0, y: 35, scale: 0.95, filter: "blur(1px)" }}
             animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)"  }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-4 lg:mt-0 relative overflow-hidden rounded-2xl border border-violet-400/50 bg-[#100e20]/95 shadow-[0_0_35px_rgba(139,92,246,0.18)] backdrop-blur-xl"
+            className="mt-4 lg:mt-0 relative overflow-hidden rounded-2xl border border-blue-400/50 bg-[#100e20]/95 shadow-[0_0_35px_rgba(139,92,246,0.18)] backdrop-blur-xl"
         >
             {/* Window header */}
             <div className="flex h-11 pt-2 items-center border-b border-white/10 bg-white/3 px-4">
@@ -85,7 +85,7 @@ export default function CodeEditor() {
 
                 {/* Active tab */}
                 <div className="flex h-8 items-center gap-2 rounded-t-xl bg-[#27233f] px-3 ml-4">
-                    <span className="rounded bg-violet-500 px-1 py-0.5 text-[10px] font-bold text-white">TS</span>
+                    <span className="rounded bg-blue-500 px-1 py-0.5 text-[10px] font-bold text-white">TS</span>
                     <span className="text-xs font-medium text-gray-200 sm:text-sm">profile.ts</span>
                     <X size={14} className="ml-3 text-gray-400" />
                 </div>
@@ -97,7 +97,7 @@ export default function CodeEditor() {
 
                 {/* Editor sidebar */}
                 <div className="flex w-12 shrink-0 flex-col items-center gap-6 border-r border-white/10 bg-white/2 py-5">
-                    <Code2 size={28} className="text-violet-400 bg-gray-100/10 px-1 rounded-sm" />
+                    <Code2 size={28} className="text-blue-400 bg-gray-100/10 px-1 rounded-sm" />
                     <Folder size={20} className="text-gray-500" />
                     <GitBranch size={20} className="text-gray-500" />
                     <Terminal size={20} className="text-gray-500" />
@@ -110,7 +110,7 @@ export default function CodeEditor() {
                             <div
                                 key={index}
                                 className={`w-full flex items-center gap-2 sm:gap-5 px-2 ${index === 7
-                                        ? "rounded bg-violet-500/10"
+                                        ? "rounded bg-blue-500/10"
                                         : ""
                                     }`}
                             >
@@ -127,7 +127,7 @@ export default function CodeEditor() {
                                             duration: 1,
                                             repeat: Infinity,
                                         }}
-                                        className="h-4 w-0.5 bg-violet-400"
+                                        className="h-4 w-0.5 bg-blue-400"
                                     />
                                 )}
                             </div>
@@ -137,7 +137,7 @@ export default function CodeEditor() {
             </div>
 
             {/* Bottom status bar */}
-            <div className="flex items-center justify-between border-t border-white/10 bg-violet-500/6 px-4 py-2 text-[10px] text-gray-400 sm:text-xs">
+            <div className="flex items-center justify-between border-t border-white/10 bg-blue-500/6 px-4 py-2 text-[10px] text-gray-400 sm:text-xs">
                 <div className="flex items-center gap-3">
                     <span className="flex items-center gap-1">
                         <GitBranch size={12} />

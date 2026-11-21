@@ -21,8 +21,8 @@ const learningTopics = [
   {
     name: "System Design",
     icon: Network,
-    color: "text-violet-400",
-    bg: "bg-violet-400/10",
+    color: "text-blue-400",
+    bg: "bg-blue-400/10",
   },
   {
     name: "AI / ML",
@@ -33,8 +33,8 @@ const learningTopics = [
 //   {
 //     name: "Kubernetes",
 //     icon: Server,
-//     color: "text-violet-400",
-//     bg: "bg-violet-400/10",
+//     color: "text-blue-400",
+//     bg: "bg-blue-400/10",
 //   },
 ];
 
@@ -44,17 +44,17 @@ export default function CurrentlyExploring() {
       initial={{ opacity: 0, y: 20, filter: "blur(2px)" }}
       animate={{ opacity: 1, y: 0, filter: "blur(0px)"  }}
       transition={{ duration: 0.7, delay: 0.8 }}
-      className="relative overflow-hidden rounded-2xl border border-violet-500/30 bg-white/70 mt-6 p-4 shadow-lg dark:bg-[#171329]/80"
+      className="relative overflow-hidden rounded-2xl border border-blue-500/30 bg-white/70 mt-6 p-4 shadow-lg dark:bg-[#171329]/80"
     >
       {/* Background glow */}
-      <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-violet-500/10 blur-3xl" />
+      <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-blue-500/10 blur-3xl" />
 
       {/* Header */}
       <div className="relative mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
           <Sparkles
             size={20}
-            className="text-violet-500"
+            className="text-blue-500"
           />
 
           <h3 className="font-semibold text-gray-900 dark:text-white">
@@ -62,7 +62,7 @@ export default function CurrentlyExploring() {
           </h3>
         </div>
 
-        <span className="rounded-full border border-violet-500/30 bg-violet-500/10 px-3 py-1 text-xs font-medium text-violet-600 dark:text-violet-400">
+        <span className="rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-600 dark:text-blue-400">
           Learning
         </span>
       </div>
@@ -79,7 +79,7 @@ export default function CurrentlyExploring() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.9 + index * 0.1 }}
               whileHover={{ y: -3 }}
-              className="flex items-center gap-2 rounded-xl border border-gray-200 bg-white/70 p-2 transition-colors hover:border-violet-400 dark:border-white/10 dark:bg-white/4 dark:hover:border-violet-500/50"
+              className="flex items-center gap-2 rounded-xl border border-gray-200 bg-white/70 p-2 transition-colors hover:border-blue-400 dark:border-white/10 dark:bg-white/4 dark:hover:border-blue-500/50"
             >
               <span className={`rounded-lg p-1.5 ${topic.bg}`}>
                 <Icon size={17} className={topic.color} />

@@ -33,10 +33,10 @@ export default function DevelopmentStrengths() {
                 return (
                     <div key={item.title} className="flex items-center gap-2">
                         {/* Strength pill */}
-                        <div className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-500/5 px-4 py-2.5 transition-all shadow-sm duration-300 hover:border-violet-300 hover:bg-violet-500/10 dark:border-violet-400/10 dark:bg-violet-500/10 dark:hover:border-violet-400/30">
+                        <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-500/5 px-4 py-2.5 transition-all shadow-sm duration-300 hover:border-blue-300 hover:bg-blue-500/10 dark:border-blue-400/10 dark:bg-blue-500/10 dark:hover:border-blue-400/30">
                             <Icon
                                 size={17}
-                                className="text-violet-600 dark:text-violet-400"
+                                className="text-blue-600 dark:text-blue-400"
                             />
 
                             <span className="whitespace-nowrap text-xs font-semibold text-gray-800 dark:text-gray-200 sm:text-sm">
@@ -46,7 +46,7 @@ export default function DevelopmentStrengths() {
 
                         {/* Separator */}
                         {index !== strengths.length - 1 && (
-                            <div className="mx-1 hidden h-5 w-px bg-violet-300/70 dark:bg-white/20 sm:block" />
+                            <div className="mx-1 hidden h-5 w-px bg-blue-300/70 dark:bg-white/20 sm:block" />
                         )}
                     </div>
                 );

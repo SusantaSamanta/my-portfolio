@@ -14,10 +14,10 @@ const stats = [
         value: "04+",
         label: "Projects",
         icon: Layers3,
-        color: "violet",
-        border: "hover:border-violet-500/70",
-        glow: "hover:shadow-violet-500/20",
-        iconColor: "text-violet-400",
+        color: "blue",
+        border: "hover:border-blue-500/70",
+        glow: "hover:shadow-blue-500/20",
+        iconColor: "text-blue-400",
     },
     {
         value: "MERN+",
@@ -59,8 +59,8 @@ export default function StatsCards() {
                     >
                         {/* Background glow */}
                         <div
-                            className={`pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full blur-3xl opacity-20 transition-opacity group-hover:opacity-30 ${stat.color === "violet"
-                                ? "bg-violet-500"
+                            className={`pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full blur-3xl opacity-20 transition-opacity group-hover:opacity-30 ${stat.color === "blue"
+                                ? "bg-blue-500"
                                 : stat.color === "cyan"
                                     ? "bg-cyan-400"
                                     : "bg-pink-500"

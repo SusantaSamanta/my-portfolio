@@ -30,7 +30,7 @@ const HomePage = () => {
 
                 {/* Right side */}
                 <DashboardFrame>
-                    <div className="min-h-87.5 rounded-2xl border border-violet-500/40 bg-white/80 shadow-2xl backdrop-blur-xl dark:bg-[#100d22]/90 sm:min-h-105" />
+                    <div className="min-h-87.5 rounded-2xl border border-blue-500/40 bg-white/80 shadow-2xl backdrop-blur-xl dark:bg-[#100d22]/90 sm:min-h-105" />
                 </DashboardFrame>
             </section>
 

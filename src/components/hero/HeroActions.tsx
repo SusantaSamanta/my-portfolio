@@ -16,7 +16,7 @@ export default function HeroActions() {
       {/* View Projects */}
       <Link
         href="#projects"
-        className="group inline-flex items-center justify-center gap-3 rounded-xl bg-linear-to-r from-violet-500 to-purple-500 px-7 py-3 font-semibold text-white shadow-lg shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-500/30"
+        className="group inline-flex items-center justify-center gap-3 rounded-xl bg-linear-to-r from-blue-500 to-purple-500 px-7 py-3 font-semibold text-white shadow-lg shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-500/30"
       >
         <Rocket
           size={20}
@@ -34,7 +34,7 @@ export default function HeroActions() {
       {/* Contact Me */}
       <Link
         href="#contact"
-        className="group inline-flex items-center justify-center gap-3 rounded-xl border border-violet-500 bg-transparent px-7 py-3 font-semibold text-gray-900 transition-all duration-300 hover:-translate-y-1 hover:bg-violet-500/10 dark:text-white dark:hover:bg-violet-500/10"
+        className="group inline-flex items-center justify-center gap-3 rounded-xl border border-blue-500 bg-transparent px-7 py-3 font-semibold text-gray-900 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-500/10 dark:text-white dark:hover:bg-blue-500/10"
       >
         <Mail
           size={20}

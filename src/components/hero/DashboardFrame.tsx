@@ -21,7 +21,7 @@ export default function DashboardFrame({
                     initial={{ opacity: 0, rotate: -8, scale: 0.9, filter: "blur(2px)" }}
                     animate={{ opacity: 1, rotate: -8, scale: 1, filter: "blur(0px)" }}
                     transition={{ duration: 0.8 }}
-                    className="absolute inset-5 rounded-4xl border border-violet-500/60 bg-linear-to-br from-violet-600/20 to-purple-900/10 shadow-[0_0_50px_rgba(139,92,246,0.15)]"
+                    className="absolute inset-5 rounded-4xl border border-blue-500/60 bg-linear-to-br from-blue-600/20 to-purple-900/10 shadow-[0_0_50px_rgba(139,92,246,0.15)]"
                 />
 
                 <motion.div
@@ -39,7 +39,7 @@ export default function DashboardFrame({
                         initial={{ opacity: 0, x: 20, filter: "blur(2px)" }}
                         animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                         transition={{ duration: 0.7, delay: 0.5 }}
-                        className="absolute -right-2 -top-6 z-20 flex items-center gap-3 rounded-2xl border border-violet-400/40 bg-white/90 px-4 py-3 shadow-[0_0_25px_rgba(139,92,246,0.15)] backdrop-blur-xl dark:bg-[#171329]/95 sm:-right-5 sm:-top-5"
+                        className="absolute -right-2 -top-6 z-20 flex items-center gap-3 rounded-2xl border border-blue-400/40 bg-white/90 px-4 py-3 shadow-[0_0_25px_rgba(139,92,246,0.15)] backdrop-blur-xl dark:bg-[#171329]/95 sm:-right-5 sm:-top-5"
                     >
                         <span className="relative flex h-3 w-3">
                             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-60" />

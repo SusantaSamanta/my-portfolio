@@ -31,11 +31,11 @@ export default function Navbar() {
           <Code2
             size={34}
             strokeWidth={2.5}
-            className="text-violet-600 dark:text-violet-500"
+            className="text-blue-600 dark:text-blue-500"
           />
 
           <span className="text-xl font-bold tracking-tight text-gray-950 dark:text-white">
-            Susanta <span className="text-violet-500">Samanta</span>
+            Susanta <span className="text-blue-500">Samanta</span>
           </span>
         </Link>
 
@@ -48,15 +48,15 @@ export default function Navbar() {
               className={`relative py- text-sm font-medium transition-colors
                 ${
                   link.name === "Home"
-                    ? "text-violet-600 dark:text-violet-400"
-                    : "text-gray-600 hover:text-violet-600 dark:text-gray-300 dark:hover:text-violet-400"
+                    ? "text-blue-600 dark:text-blue-400"
+                    : "text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
                 }
               `}
             >
               {link.name}
 
               {link.name === "Home" && (
-                <span className="absolute -bottom-1 left-0 h-0.5 w-full rounded-full bg-violet-500" />
+                <span className="absolute -bottom-1 left-0 h-0.5 w-full rounded-full bg-blue-500" />
               )}
             </Link>
           ))}
@@ -70,7 +70,7 @@ export default function Navbar() {
           <a
             href="/resume.pdf"
             download
-            className="hidden items-center gap-2 rounded-xl bg-linear-to-r from-violet-600 to-purple-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-500/20 transition hover:-translate-y-0.5 hover:shadow-purple-500/40 sm:inline-flex"
+            className="hidden items-center gap-2 rounded-xl bg-linear-to-r from-blue-600 to-purple-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-500/20 transition hover:-translate-y-0.5 hover:shadow-purple-500/40 sm:inline-flex"
           >
             <Download size={17} />
             Resume
@@ -102,7 +102,7 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="rounded-lg px-4 py-3 text-sm font-medium text-gray-700 transition hover:bg-violet-500/10 hover:text-violet-600 dark:text-gray-300 dark:hover:text-violet-400"
+                className="rounded-lg px-4 py-3 text-sm font-medium text-gray-700 transition hover:bg-blue-500/10 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
               >
                 {link.name}
               </Link>
@@ -111,7 +111,7 @@ export default function Navbar() {
             <a
               href="/resume.pdf"
               download
-              className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-violet-600 px-4 py-3 font-semibold text-white"
+              className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 font-semibold text-white"
             >
               <Download size={18} />
               Download Resume
