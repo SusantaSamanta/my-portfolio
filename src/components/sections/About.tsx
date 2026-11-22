@@ -17,7 +17,7 @@ const values = [
             "I believe good code doesn't need unnecessary complexity. I value solutions that are simple, readable, and easy to maintain.",
     },
     {
-        label: "(c)",
+        label: "(c )",
         title: "Think beyond the implementation.",
         description:
             "Making a feature work is only one part of development. I also care about performance, usability, edge cases, and how everything fits together.",
@@ -30,12 +30,17 @@ const values = [
     },
 ];
 
-export default function AboutC() {
+export default function About() {
     return (
         <section
             id="about"
-            className="relative overflow-hidden border- border-gray-200 py-16 dark:border-white/10 md:py-25"
+            className="relative overflow-hidden border- border-gray-200 py-25 dark:border-white/10"
         >
+            {/* Background Glow Effects */}
+            <div className="pointer-events-none absolute left-0 top-1/6 h-44 w-44 rounded-full bg-blue-500/25 blur-[110px] dark:bg-blue-600/25" />
+            <div className="pointer-events-none absolute right-0 top-1/3 h-48 w-48 rounded-full bg-purple-500/25 blur-[120px] dark:bg-purple-600/25" />
+            <div className="pointer-events-none absolute bottom-40 left-1/3 h-40 w-40 rounded-full bg-cyan-500/20 blur-[110px] dark:bg-cyan-600/20" />
+
             {/* Dotted Background */}
             <div
                 className="pointer-events-none absolute inset-0 opacity-[0.045] dark:opacity-[0.12]"
@@ -49,10 +54,10 @@ export default function AboutC() {
             <div className="relative mx-auto max-w-360 px-5 md:px-8 font-medium">
                 {/* About Heading */}
                 <motion.div
-                    initial={{ opacity: 0, y: 15 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 25, filter: "blur(2px)" }}
+                    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.7, delay: 0.15 }}
                     className="mb-12"
                 >
                     <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
@@ -85,10 +90,10 @@ export default function AboutC() {
                 <div className="grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
                     {/* Story */}
                     <motion.div
-                        initial={{ opacity: 0, y: 15 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, y: 25, filter: "blur(2px)" }}
+                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
+                        transition={{ duration: 0.7, delay: 0.20 }}
                         className=""
                     >
                         <p className="mb-6 text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400">
@@ -129,10 +134,10 @@ export default function AboutC() {
 
                     {/* Experience */}
                     <motion.div
-                        initial={{ opacity: 0, y: 15 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, y: 25, filter: "blur(2px)" }}
+                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.15 }}
+                        transition={{ duration: 0.7, delay: 0.20 }}
                     >
                         <p className="mb-6 text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400">
                             <span className="mr-2">02</span>
@@ -174,10 +179,10 @@ export default function AboutC() {
 
                 {/* What I Care About */}
                 <motion.div
-                    initial={{ opacity: 0, y: 15 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 25, filter: "blur(2px)" }}
+                    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.7, delay: 0.35 }}
                     className="mt-16"
                 >
                     <p className="mb-6 text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400">

@@ -9,11 +9,10 @@ import DevelopmentStrengths from "@/components/hero/DevelopmentStrengths";
 import { motion } from "framer-motion";
 import { Mouse } from "lucide-react";
 
-const HomePage = () => {
+export default function Home() {
     return (
         <>
             <section
-                id="home"
                 className="mx-auto grid min-h-[calc(100svh-76px)] max-w-360 items-center gap-10 px-4 py-12 lg:grid-cols-[5fr_4fr] lg:px-8" // lg:grid-cols-2
             >
                 {/* Left side */}
@@ -40,7 +39,7 @@ const HomePage = () => {
                 href="#about"
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-gray-500 dark:text-gray-500"
+                className="absolute bottom-5 left-1/2 z-10 hidden lg:flex -translate-x-1/2 flex-col items-center gap-2 text-gray-500 dark:text-gray-500"
                 aria-label="Scroll to About section"
             >
                 <Mouse size={25} strokeWidth={1.3} />
@@ -53,4 +52,3 @@ const HomePage = () => {
     )
 }
 
-export default HomePage

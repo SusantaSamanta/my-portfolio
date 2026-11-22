@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Code2, Download, Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
@@ -10,22 +10,83 @@ const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Projects", href: "#projects" },
-  { name: "Skills", href: "#skills" },
   { name: "Experience", href: "#experience" },
+  { name: "Skills", href: "#skills" },
   { name: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
+
+
   const [isOpen, setIsOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("");
+  useEffect(() => {
+    const updateActiveLink = () => {
+      setActiveLink(window.location.hash || "#home");
+    };
+    updateActiveLink();
+    window.addEventListener("hashchange", updateActiveLink);
+    return () => {
+      window.removeEventListener("hashchange", updateActiveLink);
+    };
+  }, []);
+
+
+
+  const [isHidden, setIsHidden] = useState(false);
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let scrollDownDistance = 0;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const delta = currentScrollY - lastScrollY;
+
+      if (isOpen || isNavigating.current || currentScrollY <= 300) {
+        setIsHidden(false);
+        scrollDownDistance = 0;
+        lastScrollY = currentScrollY;
+        return;
+      }
+
+      if (delta > 0) {
+        scrollDownDistance += delta;
+
+        if (scrollDownDistance >= 300) {
+          setIsHidden(true);
+        }
+      } else if (delta < 0) {
+        scrollDownDistance = 0;
+
+        if (delta < -6) {
+          setIsHidden(false);
+        }
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isOpen]);
+
+  const isNavigating = useRef(true);
+
+  setTimeout(() => {
+    isNavigating.current = false;
+  }, 800);
+
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200/80 bg-white/85 backdrop-blur-xl dark:border-white/10 dark:bg-[#090817]/65">
+    <header className={`fixed w-full top-0 z-50 border-b border-gray-200/80 bg-white/85 backdrop-blur-xl  transition-transform duration-300 dark:border-white/10 dark:bg-[#090817]/65  ${isHidden ? "-translate-y-full" : "translate-y-0"
+      }`}>
       <nav className="mx-auto flex h-16 max-w-360 items-center justify-between px-5 md:px-8">
 
         {/* Logo */}
         <Link
           href="#home"
-          onClick={() => setIsOpen(false)}
+          onClick={() => { setIsOpen(false); setActiveLink("#home") }}
           className="flex shrink-0 items-center gap-2"
         >
           <Code2
@@ -40,26 +101,30 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop navigation */}
-        <div className="hidden items-center gap-7 lg:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={`relative py- text-sm font-medium transition-colors
-                ${
-                  link.name === "Home"
-                    ? "text-blue-600 dark:text-blue-400"
-                    : "text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
-                }
-              `}
-            >
-              {link.name}
+        <div className="hidden items-center gap-2 lg:flex">
+          {navLinks.map((link) => {
+            const isActive = activeLink === link.href;
 
-              {link.name === "Home" && (
-                <span className="absolute -bottom-1 left-0 h-0.5 w-full rounded-full bg-blue-500" />
-              )}
-            </Link>
-          ))}
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => {
+                  setActiveLink(link.href)
+                  isNavigating.current = true;
+                  setTimeout(() => {
+                    isNavigating.current = false;
+                  }, 800);
+                }}
+                className={`rounded-full px-3 py-1.5 text-sm font-medium transition-all duration-300 ${isActive
+                  ? "border border-blue-500/10 bg-blue-500/10 text-blue-700 dark:border-blue-400/20 dark:bg-blue-500/15 dark:text-blue-400"
+                  : "border border-transparent text-gray-600 hover:bg-gray-400/10 hover:text-blue-600 dark:text-gray-300 dark:hover:bg-white/5 dark:hover:text-blue-400"
+                  }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Right actions */}
@@ -97,16 +162,26 @@ export default function Navbar() {
           className="border-t border-gray-200 bg-white p-5 dark:border-white/10 dark:bg-[#090817] lg:hidden"
         >
           <div className="flex flex-col gap-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="rounded-lg px-4 py-3 text-sm font-medium text-gray-700 transition hover:bg-blue-500/10 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = activeLink === link.href;
+
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => {
+                    setActiveLink(link.href);
+                    setIsOpen(false);
+                  }}
+                  className={`rounded-lg px-4 py-3 text-sm font-medium transition-all duration-300 ${isActive
+                    ? "border border-blue-500/30 bg-blue-500/10 text-blue-600 dark:text-blue-400"
+                    : "border border-transparent text-gray-700 hover:bg-blue-500/10 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+                    }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
 
             <a
               href="/resume.pdf"
